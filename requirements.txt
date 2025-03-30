@@ -2,3 +2,6 @@ streamlit
 joblib
 numpy
 scikit-learn
+matplotlib
+Pillow
+seaborn
