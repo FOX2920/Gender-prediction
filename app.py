@@ -31,8 +31,8 @@ def extract_name_components(name):
 
 # Load the SVM model and CountVectorizer
 current_dir = os.path.dirname(os.path.abspath(__file__))
-model_path = os.path.join(current_dir, "saved_models/svm_count.pkl")
-vectorizer_path = os.path.join(current_dir, "saved_models/vectorizer_count.pkl")
+model_path = os.path.join(current_dir, "save_models/svm_count.pkl")
+vectorizer_path = os.path.join(current_dir, "save_models/vectorizer_count.pkl")
 
 # Load the model and vectorizer using pickle
 with open(model_path, 'rb') as f:
