@@ -151,26 +151,6 @@ def create_confidence_gauge(confidence, gender):
     plt.tight_layout()
     return fig
 
-# Generate example names
-def generate_example_names():
-    female_examples = [
-        "Nguyễn Thị An", 
-        "Trần Kim Liên", 
-        "Vũ Hoàng Yến",
-        "Phạm Thu Thảo",
-        "Lê Quỳnh Anh"
-    ]
-    
-    male_examples = [
-        "Nguyễn Văn Minh",
-        "Trần Quốc Bảo",
-        "Phạm Đức Hùng",
-        "Vũ Tuấn Anh",
-        "Hoàng Mạnh Huy"
-    ]
-    
-    return female_examples, male_examples
-
 # Sidebar
 with st.sidebar:
     st.image("gender.jpg" if os.path.exists("gender.jpg") else None, use_column_width=True)
@@ -208,23 +188,7 @@ def main():
     with col2:
         predict_button = st.button("🔍 Dự đoán giới tính")
     
-    # Example names
-    female_examples, male_examples = generate_example_names()
-    
-    col1, col2 = st.columns(2)
-    with col1:
-        st.markdown("##### Ví dụ tên nữ:")
-        for example in female_examples:
-            if st.button(example, key=f"female_{example}"):
-                st.session_state.name_input = example
-                predict_button = True
-    
-    with col2:
-        st.markdown("##### Ví dụ tên nam:")
-        for example in male_examples:
-            if st.button(example, key=f"male_{example}"):
-                st.session_state.name_input = example
-                predict_button = True
+
     
     # Error handling
     if not models_loaded:
